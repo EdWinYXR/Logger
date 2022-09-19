@@ -26,7 +26,7 @@ namespace EdWinLogManager
         protected TimeSpan m_RetainTime;
         protected int m_Index = 1;
         protected string m_BaseName;
-        protected int maxFileCount = 20;
+        protected int maxFileCount = 1000;
 
         public LogBase(LogLevel level)
         {
