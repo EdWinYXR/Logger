@@ -48,8 +48,7 @@ namespace EdWinLogManager
         {
             StringBuilder mes = new StringBuilder();
 
-            mes.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") +"  ");
-
+            mes.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fff") +"  ");
             switch (level) {
                 case LogLevel.INFO_LOG_LEVEL:
                     mes.Append("<INFO>--");
