@@ -28,6 +28,7 @@ namespace EdWinLogManager
             {
                 Directory.CreateDirectory(m_Directory);
             }
+
             m_RetainTime = new TimeSpan(retainTime, 0, 0, 0);
             m_BaseName = DateTime.Now.ToString("yyyy_MM_dd_");
             for (int i = 1; i < maxFileCount + 1; i++)
@@ -49,7 +50,9 @@ namespace EdWinLogManager
                 m_filename = string.Format("{0}\\{1}{2}.txt", m_Directory, m_BaseName, m_Index);
                 File.Delete(m_filename);
             }
+
             DeleteHistoryFile();
+
         }
 
         public override void WriteLog(LogLevel level, string manager)
@@ -78,8 +81,9 @@ namespace EdWinLogManager
                     CheckFileSize(200000);
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
             }
         }
     }

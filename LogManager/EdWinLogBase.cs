@@ -1,10 +1,7 @@
 ﻿using LogManager;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 /*
     个人微信：a7761075
@@ -16,17 +13,17 @@ using System.Threading.Tasks;
 */
 namespace EdWinLogManager
 {
-
-    public  abstract class LogBase
+    internal  abstract class LogBase
     {
         public LogLevel B_level { get; protected set; }
         protected object m_syncObject = new object();
         protected string m_filename;
         protected string m_Directory;
-        protected TimeSpan m_RetainTime;
         protected int m_Index = 1;
         protected string m_BaseName;
         protected int maxFileCount = 1000;
+        protected TimeSpan m_RetainTime;
+
 
         public LogBase(LogLevel level)
         {
@@ -48,7 +45,7 @@ namespace EdWinLogManager
         {
             StringBuilder mes = new StringBuilder();
 
-            mes.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fff") +"  ");
+            mes.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff") +"  ");
             switch (level) {
                 case LogLevel.INFO_LOG_LEVEL:
                     mes.Append("<INFO>--");

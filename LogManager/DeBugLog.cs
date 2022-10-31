@@ -24,11 +24,11 @@ namespace EdWinLogManager
         public override void Init(int retainTime=7)
         {
             throw new NotImplementedException();
-            
         }
 
         public override void WriteLog(LogLevel level, string manager)
         {
+            //Debug.WriteLine($"\"<color=#ff00ffff>{manager}</color>\"");
             Debug.WriteLine(manager);
         }
     }
